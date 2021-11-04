@@ -1,4 +1,4 @@
-FROM golang:1.16.2-alpine3.9
+FROM golang:latest
 
 RUN mkdir /app
 ADD . /app
@@ -10,3 +10,6 @@ RUN go build -o main .
 EXPOSE 8098
 
 CMD [ "/app/main" ]
+
+#   docker build -t socket-app .
+#   docker run -it -p 8098:8098 socket-app
